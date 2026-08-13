@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Forex Professional Trader — XAU/USD market dashboard, price-action analysis, trading services and educational market updates.">
+<meta name="keywords" content="forex trader, forex professional trader, XAUUSD, gold trading, forex signals, price action">
+<meta name="author" content="Forex Professional Trader">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Forex Professional Trader — XAU/USD">
+<meta property="og:description" content="Professional XAU/USD market dashboard and educational trading analysis.">
+<meta name="theme-color" content="#050914">
+<title>Forex Professional Trader — XAU/USD Live Dashboard</title>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#050914;color:#eaf2ff;font-family:Arial,sans-serif}
+.wrap{max-width:1050px;margin:auto;padding:14px}
+.card{background:#0b1220;border:1px solid #1d2b40;border-radius:16px;padding:18px;margin-bottom:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:13px;background:#18c8a0;color:#03120f;display:grid;place-items:center;font-weight:900}
+h1{font-size:20px;margin:0}
+h2{margin-top:0}
+h3{margin-top:0}
+.sub{color:#8998aa;font-size:12px;margin-top:4px}
+.live{margin-left:auto;color:#39e6a6;font-size:11px}
+.dot{display:inline-block;width:8px;height:8px;background:#39e6a6;border-radius:50%;margin-right:5px}
+.hero h2{font-size:28px;margin:0 0 8px}
+.hero p{color:#9ba9bb;font-size:13px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{padding:14px}
+.k{font-size:9px;color:#748398;font-weight:800;letter-spacing:.5px}
+.v{font-size:21px;font-weight:900;margin-top:5px}
+.cyan{color:#25d7ee}.green{color:#39e6a6}.amber{color:#f5c451}.red{color:#ff7180}
+.chart{height:260px;background:#070c15;border-radius:12px;border:1px solid #1a2739;margin-top:12px}
+svg{width:100%;height:100%}
+.price{font-size:40px;font-weight:900}
+.status{font-size:12px;margin-top:5px}
+.row{display:flex;justify-content:space-between;gap:15px;padding:9px 0;border-bottom:1px solid #172334;font-size:13px}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.note{font-size:11px;color:#7f8ea1;line-height:1.6;margin-top:12px}
+button,.btn{display:inline-block;width:100%;padding:12px;border:0;border-radius:10px;background:#18c8a0;color:#03120f;font-weight:900;margin-top:12px;cursor:pointer;text-align:center;text-decoration:none}
+.btn.secondary,button.secondary{background:#162337;color:#eaf2ff;border:1px solid #263952}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.badge{display:inline-flex;align-items:center;padding:6px 10px;border:1px solid #1d3448;border-radius:999px;color:#9fb1c6;font-size:10px;font-weight:800}
+.service{min-height:145px}
+.service p{font-size:12px;color:#8998aa;line-height:1.6}
+.signal-card{border:1px solid #1d3448;background:#08101c;border-radius:12px;padding:14px;margin-top:12px}
+.signal-main{font-size:26px;font-weight:900;margin:5px 0}
+.disclaimer{font-size:10px;color:#6f8094;line-height:1.6}
+.profile{display:flex;align-items:center;gap:16px}
+.avatar{width:72px;height:72px;border-radius:18px;background:#142238;border:1px solid #29405b;display:grid;place-items:center;font-size:25px;font-weight:900;color:#25d7ee}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+nav{display:flex;gap:8px;overflow:auto;margin:10px 0 14px}
+nav a{white-space:nowrap;color:#aebdd0;text-decoration:none;font-size:11px;padding:8px 10px;border:1px solid #1d2b40;border-radius:9px;background:#0b1220}
+footer{text-align:center}
+@media(max-width:750px){
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .three,.two{grid-template-columns:1fr}
+ .hero h2{font-size:23px}
+ .price{font-size:34px}
+}
+@media(max-width:500px){
+ .actions,.contact-grid{grid-template-columns:1fr}
+ .brand{align-items:flex-start}
+ .live{font-size:9px}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header class="card">
+  <div class="brand">
+    <div class="logo">FX</div>
+    <div>
+      <h1>Forex Professional Trader</h1>
+      <div class="sub">XAU/USD • Price Action • Market Analysis</div>
+    </div>
+    <div class="live"><span class="dot"></span><span id="connection">CONNECTING</span></div>
+  </div>
+</header>
+
+<nav>
+  <a href="#dashboard">Dashboard</a>
+  <a href="#profile">Profile</a>
+  <a href="#services">Services</a>
+  <a href="#signals">Signals</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="card hero" id="dashboard">
+  <h2>Gold Market Dashboard</h2>
+  <p>Live XAU/USD market-data presentation with bid/ask monitoring, price history and educational trade-setup tools.</p>
+  <div class="badges">
+    <span class="badge">⚡ LIVE XAU/USD</span>
+    <span class="badge">📊 PRICE ACTION</span>
+    <span class="badge">🛡️ RISK AWARE</span>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="card stat"><div class="k">XAU/USD</div><div class="v cyan" id="price">—</div></div>
+  <div class="card stat"><div class="k">BID</div><div class="v" id="bid">—</div></div>
+  <div class="card stat"><div class="k">ASK</div><div class="v" id="ask">—</div></div>
+  <div class="card stat"><div class="k">DATA STATUS</div><div class="v green" id="fresh">—</div></div>
+</section>
+
+<section class="card" id="profile">
+  <div class="profile">
+    <div class="avatar">FX</div>
+    <div>
+      <h2 style="margin:0">Professional Trader</h2>
+      <div class="sub">Forex & Gold Market Analysis</div>
+    </div>
+  </div>
+  <p class="hero p">Focused on price-action analysis, structured trade planning and risk-aware market education.</p>
+  <div class="three">
+    <div class="card stat"><div class="k">MARKET</div><div class="v">Forex</div></div>
+    <div class="card stat"><div class="k">FOCUS</div><div class="v">XAU/USD</div></div>
+    <div class="card stat"><div class="k">METHOD</div><div class="v">Price Action</div></div>
+  </div>
+</section>
+
+<section class="card" id="services">
+  <h2>Services</h2>
+  <div class="three">
+    <div class="card service">
+      <h3>📊 Market Analysis</h3>
+      <p>Educational analysis of price structure, support/resistance and potential market scenarios.</p>
+    </div>
+    <div class="card service">
+      <h3>🟡 Gold Updates</h3>
+      <p>XAU/USD-focused market updates and example setups with entry, targets and risk levels.</p>
+    </div>
+    <div class="card service">
+      <h3>📚 Trading Education</h3>
+      <p>Learn the basics of price action, trade planning and responsible risk management.</p>
+    </div>
+  </div>
+</section>
+
+<div class="two">
+<section class="card">
+  <h3>Live Price</h3>
+  <div class="price" id="bigPrice">—</div>
+  <div class="status green" id="time">Waiting for data…</div>
+  <div class="chart">
+    <svg viewBox="0 0 800 260" preserveAspectRatio="none">
+      <path id="area" fill="rgba(37,215,238,.08)"></path>
+      <path id="line" fill="none" stroke="#25d7ee" stroke-width="3"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="card" id="signals">
+  <h3>Analysis Panel</h3>
+  <div class="row"><b>Instrument</b><span>XAU/USD</span></div>
+  <div class="row"><b>Signal</b><span id="signal">WAIT</span></div>
+  <div class="row"><b>Entry</b><span id="entry">—</span></div>
+  <div class="row"><b>TP1</b><span id="tp1">—</span></div>
+  <div class="row"><b>TP2</b><span id="tp2">—</span></div>
+  <div class="row"><b>SL</b><span id="sl">—</span></div>
+
+  <div class="signal-card">
+    <div class="k">CURRENT DEMO SETUP</div>
+    <div class="signal-main" id="signalBig">WAITING</div>
+    <div class="row"><b>Entry</b><span id="entry2">—</span></div>
+    <div class="row"><b>TP1 / TP2</b><span id="targets">— / —</span></div>
+    <div class="row"><b>Stop Loss</b><span id="sl2">—</span></div>
+  </div>
+
+  <div class="actions">
+    <button onclick="makeDemoSignal()">Generate Demo Setup</button>
+    <button class="secondary" onclick="resetSignal()">Reset</button>
+  </div>
+  <div class="note">Demo setups are examples only. They are not financial advice and are not automatically sent to a broker.</div>
+</section>
+</div>
+
+<section class="card" id="contact">
+  <h2>Contact</h2>
+  <p class="note">For questions about the educational market-analysis service, contact through Telegram.</p>
+  <div class="contact-grid">
+    <a class="btn" href="https://t.me/xausd6" target="_blank" rel="noopener">📱 Contact on Telegram</a>
+    <a class="btn secondary" href="#signals">📈 View XAU/USD Dashboard</a>
+  </div>
+</section>
+
+<section class="card">
+  <h3>Data Connection</h3>
+  <div class="note">The browser calls <b>/api/gold</b>. The backend should keep any market-data API key private. Never place a secret API key inside this HTML file.</div>
+</section>
+
+<section class="card">
+  <h3>Risk & Education Notice</h3>
+  <div class="disclaimer">This website provides market information and educational analysis only. Forex and gold trading involve significant risk and losses are possible. Example setups are not guarantees of results, and users should make independent decisions and follow applicable laws and broker requirements.</div>
+</section>
+
+<footer class="note">© 2026 Forex Professional Trader • XAU/USD Market Dashboard</footer>
+
+</div>
+
+<script>
+const prices=[];
+
+async function load(){
+  try{
+    const r=await fetch('/api/gold',{cache:'no-store'});
+    const d=await r.json();
+    if(!r.ok) throw new Error(d.error||'API error');
+
+    const p=Number(d.price);
+    if(!isFinite(p)) throw new Error('Invalid price data');
+
+    prices.push(p);
+    if(prices.length>80) prices.shift();
+
+    document.getElementById('price').textContent=p.toFixed(2);
+    document.getElementById('bigPrice').textContent=p.toFixed(2);
+    document.getElementById('bid').textContent=Number(d.bid).toFixed(2);
+    document.getElementById('ask').textContent=Number(d.ask).toFixed(2);
+
+    const stale=!!d.is_stale;
+    document.getElementById('fresh').textContent=stale?'STALE':'LIVE';
+    document.getElementById('fresh').className='v '+(stale?'red':'green');
+    document.getElementById('connection').textContent='CONNECTED';
+    document.getElementById('time').textContent='Updated: '+new Date(d.computed_at).toLocaleString();
+
+    draw();
+  }catch(e){
+    document.getElementById('connection').textContent='ERROR';
+    document.getElementById('fresh').textContent='OFFLINE';
+    document.getElementById('fresh').className='v red';
+    document.getElementById('time').textContent=e.message;
+  }
+}
+
+function draw(){
+  if(prices.length<2)return;
+  let mn=Math.min(...prices),mx=Math.max(...prices);
+  let pts=prices.map((v,i)=>[
+    i*800/(prices.length-1),
+    240-(v-mn)/(mx-mn||1)*210
+  ]);
+  let d=pts.map((a,i)=>(i?'L':'M')+a[0].toFixed(1)+' '+a[1].toFixed(1)).join(' ');
+  document.getElementById('line').setAttribute('d',d);
+  document.getElementById('area').setAttribute('d',d+' L 800 260 L 0 260 Z');
+}
+
+function makeDemoSignal(){
+  let p=Number(document.getElementById('price').textContent);
+  if(!isFinite(p))return;
+
+  let buy=Math.random()>.5,s=.5;
+  let sig=buy?'BUY':'SELL';
+
+  document.getElementById('signal').textContent=sig;
+  document.getElementById('signal').className=buy?'green':'red';
+  document.getElementById('signalBig').textContent=sig;
+  document.getElementById('signalBig').className='signal-main '+(buy?'green':'red');
+
+  document.getElementById('entry').textContent=p.toFixed(2);
+  document.getElementById('tp1').textContent=(p+(buy?s:-s)).toFixed(2);
+  document.getElementById('tp2').textContent=(p+(buy?s*2:-s*2)).toFixed(2);
+  document.getElementById('sl').textContent=(p+(buy?-s:s)).toFixed(2);
+
+  document.getElementById('entry2').textContent=p.toFixed(2);
+  document.getElementById('targets').textContent=
+    (p+(buy?s:-s)).toFixed(2)+' / '+(p+(buy?s*2:-s*2)).toFixed(2);
+  document.getElementById('sl2').textContent=(p+(buy?-s:s)).toFixed(2);
+}
+
+function resetSignal(){
+  ['entry','tp1','tp2','sl','entry2','sl2'].forEach(
+    id=>document.getElementById(id).textContent='—'
+  );
+  document.getElementById('targets').textContent='— / —';
+  document.getElementById('signal').textContent='WAIT';
+  document.getElementById('signal').className='';
+  document.getElementById('signalBig').textContent='WAITING';
+  document.getElementById('signalBig').className='signal-main';
+}
+
+load();
+setInterval(load,60000);
+</script>
+</body>
+</html>
